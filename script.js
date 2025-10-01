@@ -47,7 +47,7 @@ class Character {
 
     target.health -= finalDamage
 
-    console.log(`⚔️ ${this.name} атакует ${target.name}`)
+    console.log(`${this.name} атакует ${target.name}`)
     console.log(
       `Урон: ${this.strength} (сила) + ${this.weapon.damage} (${this.weapon.name}) = ${baseDamage}`
     )
@@ -60,7 +60,7 @@ class Character {
     )
 
     if (!target.isAlive()) {
-      console.log(`💀 ${target.name} умер в бою`)
+      console.log(`${target.name} умер в бою`)
     }
     console.log(`---`)
   }
