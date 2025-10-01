@@ -41,13 +41,10 @@ class Character {
   attack(target) {
     if (!this.isAlive() || !target.isAlive()) return
 
-    // Базовый урон = сила персонажа + урон оружия
     const baseDamage = this.strength + this.weapon.damage
 
-    // Финальный урон = базовый урон - защита цели (минимум 1 урон)
     const finalDamage = Math.max(baseDamage - target.totalArmor, 1)
 
-    // Наносим урон
     target.health -= finalDamage
 
     console.log(`⚔️ ${this.name} атакует ${target.name}`)
@@ -74,7 +71,6 @@ class Character {
 }
 
 class CharacterBuilder {
-  // стандартные значения персонажей
   constructor(race, name) {
     this.race = race
     this.name = name
